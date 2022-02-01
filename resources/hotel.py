@@ -1,3 +1,5 @@
+from flask_restful import Resource
+
 
 hoteis = [
     {
@@ -23,3 +25,7 @@ hoteis = [
     }
 
 ]
+
+class Hoteis(Resource):
+    def get(self):
+        return {'hoteis': hoteis}
