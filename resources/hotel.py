@@ -36,3 +36,6 @@ class Hotel(Resource):
 
     def post(self):
         pass
+
+    def put(self):
+        pass
