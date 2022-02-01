@@ -39,3 +39,6 @@ class Hotel(Resource):
 
     def put(self):
         pass
+
+    def delete(self):
+        pass
