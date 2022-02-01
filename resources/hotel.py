@@ -29,3 +29,6 @@ hoteis = [
 class Hoteis(Resource):
     def get(self):
         return {'hoteis': hoteis}
+
+class Hotel(Resource):
+    pass
