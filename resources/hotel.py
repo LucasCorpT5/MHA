@@ -31,4 +31,8 @@ class Hoteis(Resource):
         return {'hoteis': hoteis}
 
 class Hotel(Resource):
-    pass
+    def get(self):
+        pass
+
+    def post(self):
+        pass
