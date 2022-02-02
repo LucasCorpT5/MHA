@@ -44,6 +44,16 @@ class Hotel(Resource):
         argumentos.add_argument('diaria')
         argumentos.add_argument('cidade')
 
+        dados = argumentos.parse_args()
+
+        novo_hotel = {
+            'hotel_id': hotel_id,
+            'nome': dados['nome'],
+            'estrelas': dados['estrelas'],
+            'diaria': dados['diaria'],
+            'cidade': dados['cidade']
+        }
+
     def put(self, hotel_id):
         pass
 
