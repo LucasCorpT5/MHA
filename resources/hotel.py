@@ -54,6 +54,8 @@ class Hotel(Resource):
             'cidade': dados['cidade']
         }
 
+        hoteis.append(novo_hotel)
+
     def put(self, hotel_id):
         pass
 
