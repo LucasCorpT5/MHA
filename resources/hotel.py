@@ -38,7 +38,11 @@ class Hotel(Resource):
         return {'message': 'Hotel not found'}, 404 # not found
 
     def post(self, hotel_id):
-        pass
+        argumentos = reparse.RequestParser()
+        argumentos.add_argument('nome')
+        argumentos.add_argument('estrelas')
+        argumentos.add_argument('diaria')
+        argumentos.add_argument('cidade')
 
     def put(self, hotel_id):
         pass
