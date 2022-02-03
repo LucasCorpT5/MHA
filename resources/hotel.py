@@ -43,14 +43,14 @@ class Hotel(Resource):
                 return hotel
         return None
 
-    def get(hotel_id):
+    def get(self, hotel_id):
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
             return hotel
 
         return {'message': 'Hotel not found'}, 404 # not found
 
-    def post(hotel_id):
+    def post(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
 
         novo_hotel = {
@@ -66,8 +66,7 @@ class Hotel(Resource):
 
     def put(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
-        novo_hotel = {
-            'hotel_id': hotel_id, **dados}
+        novo_hotel = {'hotel_id': hotel_id, **dados}
 
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
