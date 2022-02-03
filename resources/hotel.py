@@ -75,7 +75,7 @@ class Hotel(Resource):
             return novo_hotels, 200
         else:
             hoteis.append(novo_hotel)
-            return novo_hotel
+            return novo_hotel, 201
 
     def delete(self, hotel_id):
         pass
