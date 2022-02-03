@@ -77,4 +77,4 @@ class Hotel(Resource):
             return novo_hotel, 201 # Created
 
     def delete(self, hotel_id):
-        pass
+        hoteis = [hotel for hotel in hoteis if hotel['hotel_id'] != hotel_id]
