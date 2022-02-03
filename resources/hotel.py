@@ -37,14 +37,14 @@ class Hotel(Resource):
                 return hotel
         return None
 
-    def get(self, hotel_id):
+    def get(hotel_id):
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
             return hotel
 
         return {'message': 'Hotel not found'}, 404 # not found
 
-    def post(self, hotel_id):
+    def post(hotel_id):
         argumentos = reqparse.RequestParser()
         argumentos.add_argument('nome')
         argumentos.add_argument('estrelas')
@@ -67,7 +67,7 @@ class Hotel(Resource):
     def put(self, hotel_id):
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
-            pass
+            hotel.update(novo_hotel)
 
     def delete(self, hotel_id):
         pass
