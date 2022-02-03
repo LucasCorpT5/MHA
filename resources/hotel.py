@@ -31,7 +31,7 @@ class Hoteis(Resource):
         return {'hoteis': hoteis}
 
 class Hotel(Resource):
-    def find_hotel(self):
+    def find_hotel(hotel_id):
         for hotel in hoteis:
             if hotel['hotel_id'] == hotel_id:
                 return hotel
@@ -41,7 +41,7 @@ class Hotel(Resource):
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
             return hotel
-        
+
         return {'message': 'Hotel not found'}, 404 # not found
 
     def post(self, hotel_id):
@@ -65,7 +65,9 @@ class Hotel(Resource):
         return novo_hotel, 200
 
     def put(self, hotel_id):
-
+        hotel = Hotel.find_hotel(hotel_id)
+        if hotel:
+            pass
 
     def delete(self, hotel_id):
         pass
