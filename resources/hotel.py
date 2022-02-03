@@ -72,10 +72,10 @@ class Hotel(Resource):
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
             hotel.update(novo_hotel)
-            return novo_hotels, 200
+            return novo_hotel, 200 # Ok
         else:
             hoteis.append(novo_hotel)
-            return novo_hotel, 201
+            return novo_hotel, 201 # Created
 
     def delete(self, hotel_id):
         pass
