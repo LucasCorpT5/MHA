@@ -9,4 +9,6 @@ api.add_resource(Hoteis, '/hoteis')
 api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
 
 if __name__ == '__main__':
+    from sql_alchemy import banco
+    banco.init_app(app)
     app.run(debug=True)
