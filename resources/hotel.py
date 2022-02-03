@@ -66,6 +66,8 @@ class Hotel(Resource):
 
     def put(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
+        novo_hotel = {
+            'hotel_id': hotel_id, **dados}
 
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
