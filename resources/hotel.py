@@ -70,17 +70,16 @@ class Hotel(Resource):
 
     def post(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
-
-        novo_hotel = HotelModel(hotel_id, **dados)
+        hotel_objeto = HotelModel(hotel_id, **dados)
+        novo_hotel = hotel_objeto.json()
         # novo_hotel = {'hotel_id': hotel_id, **dados}
-
         hoteis.append(novo_hotel)
         return novo_hotel, 200
 
     def put(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
-        novo_hotel = {'hotel_id': hotel_id, **dados}
-
+        hotel_objeto = HotelModel(hotel_id, **dados)
+        novo_hotel = hotel_objeto.json()
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
             hotel.update(novo_hotel)
