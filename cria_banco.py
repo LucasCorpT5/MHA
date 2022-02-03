@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect('hotelAPI.db')
+connection = sqlite3.connect('HotelAPI.db')
 cursor = connection.cursor()
 
 cria_tabela = "CREATE TABLE IF NOT EXISTS hoteis (hotel_id text PRIMARY KEY, \
