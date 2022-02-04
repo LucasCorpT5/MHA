@@ -64,10 +64,11 @@ class Hotel(Resource):
         hotel_encontrado = HotelModel.find_hotel(hotel_id, **dados)
         if hotel_encontrado:
             hotel_encontrado.update_hotel(**dados)
-            return hotel, 200 # Ok
+            return hotel_encontrado.json(), 200 # Ok
         else:
-            hoteis.save(novo_hotel)
-            return novo_hotel, 201 # Created
+            hotel = HotelModel(hotel_id, **dados)
+            hotel.save_hotel()
+            return hotel.json(), 201 # Created
 
     def delete(self, hotel_id):
         global hoteis
