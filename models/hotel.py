@@ -35,4 +35,4 @@ class HotelModel(banco.Model):
 
     def save_hotel(self):
         banco.session.add(self)
-        
+        banco.sesssion.commit()
