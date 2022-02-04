@@ -60,10 +60,10 @@ class Hotel(Resource):
 
     def put(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
-        
-        hotel = HotelModel(hotel_id, **dados)
-        if hotel:
-            hotel.update(novo_hotel)
+
+        hotel_encontrado = HotelModel.find_hotel(hotel_id, **dados)
+        if hotel_encontrado:
+            hotel_encontrado.update_hotel(hotel_encontrado)
             return novo_hotel, 200 # Ok
         else:
             hoteis.append(novo_hotel)
