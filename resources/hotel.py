@@ -30,8 +30,10 @@ class Hotel(Resource):
 
         dados = Hotel.argumentos.parse_args()
         hotel = HotelModel(hotel_id, **dados)
-        hotel.save_hotel()
-        return hotel.json()
+        try:
+            hotel.save_hotel()
+        except:
+            return hotel.json()
 
     def put(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
