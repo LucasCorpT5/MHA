@@ -75,3 +75,5 @@ class Hotel(Resource):
         if hotel:
             hotel.delete_hotel()
             return {'message': 'Hotel deleted.'}
+        else:
+            return {'message': 'Hotel not found.'}
