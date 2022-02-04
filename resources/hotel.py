@@ -51,7 +51,10 @@ class Hotel(Resource):
     def delete(self, hotel_id):
         hotel = HotelModel.find_hotel(hotel_id)
         if hotel:
-            hotel.delete_hotel()
+            try:
+                hotel.delete_hotel()
+            except:
+                return {'message': 'An internal error ocurred trying to save hotel.'}, 500 # Internal server error
             return {'message': 'Hotel deleted.'}
         else:
             return {'message': 'Hotel not found.'}
