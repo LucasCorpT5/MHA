@@ -55,6 +55,6 @@ class Hotel(Resource):
                 hotel.delete_hotel()
             except:
                 return {'message': 'An internal error ocurred trying to save hotel.'}, 500 # Internal server error
-            return {'message': 'Hotel deleted.'}
+            return {'message': 'Hotel deleted.'}, 200
         else:
-            return {'message': 'Hotel not found.'}
+            return {'message': 'Hotel not found.'}, 404
