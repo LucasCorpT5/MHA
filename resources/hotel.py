@@ -26,14 +26,14 @@ class Hotel(Resource):
 
     def post(self, hotel_id):
         if HotelModel.find_hotel(hotel_id):
-            return {'message': "Hotel id '{}' already exists".format(hotel_id)}, 400 # bad request
+            return {'message': "Hotel id '{}' already exists".format(hotel_id)}, 400 # Bad request
 
         dados = Hotel.argumentos.parse_args()
         hotel = HotelModel(hotel_id, **dados)
         try:
             hotel.save_hotel()
         except:
-            return {'message': 'An internal error ocurred trying to save hotel.'}
+            return {'message': 'An internal error ocurred trying to save hotel.'}, 500 # Internal server error
         return hotel.json()
 
     def put(self, hotel_id):
