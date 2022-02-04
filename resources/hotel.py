@@ -56,7 +56,6 @@ class Hotel(Resource):
         dados = Hotel.argumentos.parse_args()
         hotel_objeto = HotelModel(hotel_id, **dados)
         novo_hotel = hotel_objeto.json()
-        # novo_hotel = {'hotel_id': hotel_id, **dados}
         hoteis.append(novo_hotel)
         return novo_hotel, 200
 
