@@ -63,10 +63,10 @@ class Hotel(Resource):
 
         hotel_encontrado = HotelModel.find_hotel(hotel_id, **dados)
         if hotel_encontrado:
-            hotel_encontrado.update_hotel(hotel_encontrado)
-            return novo_hotel, 200 # Ok
+            hotel_encontrado.update_hotel(**dados)
+            return hotel, 200 # Ok
         else:
-            hoteis.append(novo_hotel)
+            hoteis.save(novo_hotel)
             return novo_hotel, 201 # Created
 
     def delete(self, hotel_id):
