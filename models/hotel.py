@@ -38,4 +38,4 @@ class HotelModel(banco.Model):
         banco.session.commit()
 
     def update_hotel(self):
-        
+        pass
