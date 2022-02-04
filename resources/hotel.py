@@ -33,7 +33,8 @@ class Hotel(Resource):
         try:
             hotel.save_hotel()
         except:
-            return hotel.json()
+            return {'message': 'An internal error ocurred trying to save hotel.'}
+        return hotel.json()
 
     def put(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
