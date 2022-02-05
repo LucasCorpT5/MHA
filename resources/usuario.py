@@ -9,7 +9,7 @@ class User(Resource):
         else:
             return {'message': 'User not found'}, 404
 
-    def delete(self):
+    def delete(self, user_id):
         user = UserModel.find_user(user_id)
         if user:
             user.delete_user()
