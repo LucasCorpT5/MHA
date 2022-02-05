@@ -7,10 +7,10 @@ class User(Resource):
         if user:
             return user.json()
         else:
-            return {'message': 'Hotel not found'}, 404
+            return {'message': 'User not found'}, 404
 
     def delete(self):
         user = UserModel.find_user(user_id)
         if user:
             user.delete_user()
-            
+            return {'messsage': 'User deleted'}
