@@ -18,4 +18,5 @@ class User(Resource):
             return {'message': 'User not found'}, 404
 
 class UserRegister(Resource):
-    pass
+    def post(self):
+        pass
