@@ -10,4 +10,4 @@ class User(Resource):
             return {'message': 'Hotel not found'}, 404
 
     def delete(self):
-        pass
+        user = UserModel.find_user(user_id)
