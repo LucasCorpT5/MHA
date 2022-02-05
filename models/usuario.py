@@ -18,12 +18,16 @@ class UserModel(banco.Model):
         }
 
     @classmethod
-    def find_user(cls):
+    def find_user(cls, user_id):
         user = cls.query.filter_by(user_id=user_id).first()
         if user:
             return user
         else:
             return None
+
+    @classmethod
+    def find_by_login(cls, login):
+        pass
 
     def save_user(self):
         banco.session.add(self)
