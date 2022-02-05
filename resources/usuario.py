@@ -16,3 +16,6 @@ class User(Resource):
             return {'messsage': 'User deleted'}
         else:
             return {'message': 'User not found'}, 404
+
+class UserRegister(Resource):
+    pass
