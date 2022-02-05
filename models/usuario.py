@@ -26,3 +26,6 @@ class UserModel(banco.Model):
             return user
         else:
             return None
+
+    def save_user(self):
+        banco.session.add(self)
