@@ -30,3 +30,8 @@ class UserRegister(Resource):
         user = UserModel(**dados)
         user.save_user()
         return {'message': 'User created successfully!'}, 201 # Created
+
+class UserLogin(Resource):
+    @classmethod
+    def post(cls):
+        pass

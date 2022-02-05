@@ -13,7 +13,7 @@ class UserModel(banco.Model):
 
     def json(self):
         return {
-            'user_id': user_id,
+            'user_id': self.user_id,
             'login': self.login
         }
 
