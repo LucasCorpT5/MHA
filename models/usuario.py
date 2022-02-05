@@ -12,3 +12,11 @@ class UserModel(banco.Model):
         self.nome = nome
         self.email = email
         self.senha = senha
+
+    def json(self):
+        return {
+            'user_id': user_id,
+            'nome': self.nome
+        }
+
+    
