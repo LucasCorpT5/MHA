@@ -20,12 +20,11 @@ class User(Resource):
 class UserRegister(Resource):
     def post(self):
         atributos = reqparse.RequestParser()
-        atributos.add_argument('nome', type=str, required=True, help="The field 'nome' cannot be left blank")
-        atributos.add_argument('email', type=str, required=True, help="The field 'email' cannot be left blank")
+        atributos.add_argument('login', type=str, required=True, help="The field 'nome' cannot be left blank")
         atributos.add_argument('senha', type=str, required=True, help="The field 'senha' cannot be left blank")
 
-        if UserModel.find_by_email(dados['email']):
-            return {'message': "The email '{}' already exists.".format(dados['email'])}
+        if UserModel.find_by_login(dados['login']):
+            return {'message': "The login '{}' already exists.".format(dados['email'])}
 
         user = UserModel(**dados)
         user.save_user()
