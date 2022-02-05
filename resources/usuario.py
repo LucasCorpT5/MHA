@@ -11,3 +11,6 @@ class User(Resource):
 
     def delete(self):
         user = UserModel.find_user(user_id)
+        if user:
+            user.delete_user()
+            
