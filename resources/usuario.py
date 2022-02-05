@@ -14,3 +14,5 @@ class User(Resource):
         if user:
             user.delete_user()
             return {'messsage': 'User deleted'}
+        else:
+            return {'message': 'User not found'}, 404
