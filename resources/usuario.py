@@ -26,3 +26,5 @@ class UserRegister(Resource):
 
         if UserModel.find_by_email(dados['email']):
             return {'message': "The email '{}' already exists.".format(dados['email'])}
+
+        user = UserModel(**dados)
