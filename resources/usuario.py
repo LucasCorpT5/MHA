@@ -36,3 +36,8 @@ class UserLogin(Resource):
     @classmethod
     def post(cls):
         dados = atributos.parse_args()
+
+        user = UserModel.find_by_login(dados['login'])
+
+        if user and safe_str_cmp(user.senha, dados['senha']):
+            pass
