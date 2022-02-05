@@ -19,4 +19,4 @@ class User(Resource):
 
 class UserRegister(Resource):
     def post(self):
-        pass
+        atributos = reqparse.RequestParser()
