@@ -28,6 +28,10 @@ class UserModel(banco.Model):
     @classmethod
     def find_by_login(cls, login):
         user = cls.query.filter_by(login=login).first()
+        if user:
+            return user
+        else:
+            return None
 
     def save_user(self):
         banco.session.add(self)
