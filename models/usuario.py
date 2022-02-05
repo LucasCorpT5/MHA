@@ -27,7 +27,7 @@ class UserModel(banco.Model):
 
     @classmethod
     def find_by_login(cls, login):
-        pass
+        user = cls.query.filter_by(login=login).first()
 
     def save_user(self):
         banco.session.add(self)
