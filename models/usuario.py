@@ -19,4 +19,10 @@ class UserModel(banco.Model):
             'nome': self.nome
         }
 
-    
+    @classmethod
+    def find_user(cls):
+        user = cls.query.filter_by(user_id=user_id).first()
+        if user:
+            return user
+        else:
+            return None
