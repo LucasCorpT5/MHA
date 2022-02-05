@@ -20,7 +20,7 @@ class User(Resource):
 class UserRegister(Resource):
     def post(self):
         atributos = reqparse.RequestParser()
-        atributos.add_argument('login', type=str, required=True, help="The field 'nome' cannot be left blank")
+        atributos.add_argument('login', type=str, required=True, help="The field 'login' cannot be left blank")
         atributos.add_argument('senha', type=str, required=True, help="The field 'senha' cannot be left blank")
 
         if UserModel.find_by_login(dados['login']):
