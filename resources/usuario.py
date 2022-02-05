@@ -28,3 +28,4 @@ class UserRegister(Resource):
             return {'message': "The email '{}' already exists.".format(dados['email'])}
 
         user = UserModel(**dados)
+        user.save_user()
