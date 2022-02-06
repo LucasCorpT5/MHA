@@ -21,7 +21,7 @@ api.add_resource(UserRegister, '/cadastro')
 api.add_resource(UserLogin, '/login')
 
 if __name__ == '__main__':
-    app.secret_key = 'secret'
+    app.secret_key = process.env.secret_key
     from sql_alchemy import banco
     banco.init_app(app)
     app.run(debug=True)
