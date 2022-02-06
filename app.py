@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import Resource, Api
 from resources.hotel import Hoteis, Hotel
 from resources.usuario import User, UserRegister, UserLogin, UserLogout
