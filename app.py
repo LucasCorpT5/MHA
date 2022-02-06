@@ -3,6 +3,7 @@ from flask_restful import Resource, Api
 from resources.hotel import Hoteis, Hotel
 from resources.usuario import User, UserRegister, UserLogin, UserLogout
 from flask_jwt_extended import JWTManager
+from blacklist import BLACKLIST
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///HotelServiceAPI'
