@@ -41,7 +41,10 @@ class Hoteis(Resource):
         dados = path_params.parse_args()
         dados_validos = {chave:dados[chave] for chave in dados if dados[chave] is not None}
         parametros = normalize_path_params(**dados_validos)
-        if parametros.get('cidade')
+
+        if parametros.get('cidade'):
+            consulta = "SELECT * FROM hoteis \
+            WHERE (estrelas > estrelas_min)"
 
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 
