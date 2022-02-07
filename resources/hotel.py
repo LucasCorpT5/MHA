@@ -3,7 +3,8 @@ from models.hotel import HotelModel
 from flask_jwt_extended import jwt_required
 import sqlite3
 
-def normalize_path_params(cidade=None, estrelas_min=0, estrelas_max=5, diaria_min=0, diaria_max=10000, limit=50, offset=0)
+def normalize_path_params(cidade=None, estrelas_min=0, estrelas_max=5, diaria_min=0, diaria_max=10000, limit=50, offset=0, **dados):
+    pass
 
 path_params = reqparse.RequestParser()
 path_params.add_argument('cidade', type=str)
