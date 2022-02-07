@@ -41,6 +41,8 @@ class Hoteis(Resource):
         dados = path_params.parse_args()
         dados_validos = {chave:dados[chave] for chave in dados if dados[chave] is not None}
         parametros = normalize_path_params(**dados_validos)
+        if parametros['cidade']
+
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 
 class Hotel(Resource):
