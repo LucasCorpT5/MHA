@@ -20,6 +20,10 @@ def cria_banco():
 def verifica_blacklist(token):
     return token['jti'] in BLACKLIST
 
+@jwt.revoked_token_loader
+def token_de_acesso_invalidado():
+    pass
+
 api.add_resource(Hoteis, '/hoteis')
 api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
 api.add_resource(User, '/usuarios/<int:user_id>')
