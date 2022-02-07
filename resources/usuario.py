@@ -47,3 +47,7 @@ class UserLogin(Resource):
             return {'access_token': token_de_acesso}, 200
         else:
             return {'message': 'The username or password is incorrect.'}, 401 # Unauthorized
+
+class UserLogout(Resource):
+    @jwt_required
+    
