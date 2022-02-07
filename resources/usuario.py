@@ -51,4 +51,5 @@ class UserLogin(Resource):
 class UserLogout(Resource):
     @jwt_required
     def post(self):
-        pass
+        jwt_id = get_raw_jwt()['jti'] # JWT Token Identifier
+        BLACKLIST.add(jwt_id)
