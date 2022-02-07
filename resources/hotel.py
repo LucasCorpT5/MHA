@@ -14,6 +14,7 @@ path_params.add_argument('offset', type=float)
 
 class Hoteis(Resource):
     def get(self):
+        dados = path_params.parse_args()
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 
 class Hotel(Resource):
