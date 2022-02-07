@@ -36,6 +36,7 @@ path_params.add_argument('offset', type=float)
 class Hoteis(Resource):
     def get(self):
         connection = sqlite3.connect('HotelServiceAPI.db')
+        cursor = connection.cursor()
 
         dados = path_params.parse_args()
         dados_validos = {chave:dados[chave] for chave in dados if dados[chave] is not None}
