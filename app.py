@@ -22,7 +22,7 @@ def verifica_blacklist(self, token):
 
 @jwt.revoked_token_loader
 def token_de_acesso_invalidado(jwt_header, jwt_payload):
-    return
+    return jsonify({'message': ''})
 
 api.add_resource(Hoteis, '/hoteis')
 api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
