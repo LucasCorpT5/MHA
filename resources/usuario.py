@@ -50,4 +50,5 @@ class UserLogin(Resource):
 
 class UserLogout(Resource):
     @jwt_required
-    
+    def post(self):
+        pass
