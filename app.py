@@ -17,12 +17,12 @@ def cria_banco():
     banco.create_all()
 
 @jwt.token_in_blocklist_loader
-def verifica_blacklist(token):
+def verifica_blacklist(self, token):
     return token['jti'] in BLACKLIST
 
 @jwt.revoked_token_loader
-def token_de_acesso_invalidado():
-    pass
+def token_de_acesso_invalidado(jwt_header, jwt_payload):
+    return
 
 api.add_resource(Hoteis, '/hoteis')
 api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
