@@ -18,7 +18,7 @@ def cria_banco():
 
 @jwt.token_in_blocklist_loader
 def verifica_blacklist(token):
-    pass
+    return token['jti'] in BLACKLIST
 
 api.add_resource(Hoteis, '/hoteis')
 api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
