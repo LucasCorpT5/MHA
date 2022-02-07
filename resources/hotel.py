@@ -60,7 +60,11 @@ class Hoteis(Resource):
         hoteis = []
         for linha in resultado:
             hoteis.append({
-                
+                'hotel_id': linha[0],
+                'nome': linha[1],
+                'estrelas': linha[2],
+                'diaria': linha[3,
+                'cidade': linha[4]
             })
 
         return {'hoteis': hoteis}
