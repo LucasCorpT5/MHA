@@ -14,6 +14,15 @@ def normalize_path_params(cidade=None, estrelas_min=0, estrelas_max=5, diaria_mi
             'limit': limit,
             'offset': offset
         }
+    else:
+        return {
+            'estrelas_min': estrelas_min,
+            'estrelas_max': estrelas_max,
+            'diaria_min': diaria_min,
+            'diaria_max': diaria_max,
+            'limit': limit,
+            'offset': offset
+        }
 
 path_params = reqparse.RequestParser()
 path_params.add_argument('cidade', type=str)
@@ -28,6 +37,7 @@ class Hoteis(Resource):
     def get(self):
         dados = path_params.parse_args()
         dados_validos = {chave:dados[chave] for chave in dados if dados[chave] is not None}
+        parametros = normalize_path_params(**dados_validos)
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 
 class Hotel(Resource):
