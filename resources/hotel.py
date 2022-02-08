@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse
 from models.hotel import HotelModel
 from flask_jwt_extended import jwt_required
-from resources import normalize_path_params, consulta_com_cidade, consulta_sem_cidade
+from resources.filtros import normalize_path_params, consulta_com_cidade, consulta_sem_cidade
 import sqlite3
 
 path_params = reqparse.RequestParser()
