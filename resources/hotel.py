@@ -42,12 +42,13 @@ class Hoteis(Resource):
         dados_validos = {chave:dados[chave] for chave in dados if dados[chave] is not None}
         parametros = normalize_path_params(**dados_validos)
 
-        if parametros.get('cidade'):
+        if not parametros.get('cidade'):
             consulta = "SELECT * FROM hoteis \
             WHERE (estrelas > ? and estrelas < ?) \
             and (diaria > ? and diaria < ?) \
             LIMIT ? OFFSET ?"
-            resultado = cursor.execute(consulta)
+            tupla = tupla([parametros[chave] for chave in parametros])
+            resultado = cursor.execute(consulta, ())
 
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 
