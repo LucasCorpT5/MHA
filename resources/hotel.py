@@ -44,7 +44,9 @@ class Hoteis(Resource):
 
         if parametros.get('cidade'):
             consulta = "SELECT * FROM hoteis \
-            WHERE (estrelas > estrelas_min)"
+            WHERE (estrelas > ? and estrelas < ?) \
+            and (diaria > ? and diaria < ?) \
+            LIMIT ? OFFSET ?"
 
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 
