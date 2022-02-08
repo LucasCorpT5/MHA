@@ -57,7 +57,13 @@ class Hoteis(Resource):
             tupla = tupla([parametros[chave] for chave in parametros])
             resultado = cursor.execute(consulta, tupla)
 
-        return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
+        hoteis = []
+        for linha in resultado:
+            hoteis.append({
+                
+            })
+
+        return {'hoteis': hoteis}
 
 class Hotel(Resource):
     argumentos = reqparse.RequestParser()
