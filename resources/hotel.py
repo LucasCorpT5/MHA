@@ -49,6 +49,13 @@ class Hoteis(Resource):
             LIMIT ? OFFSET ?"
             tupla = tupla([parametros[chave] for chave in parametros])
             resultado = cursor.execute(consulta, ())
+        else:
+            consulta = "SELECT * FROM hoteis \
+            WHERE (estrelas > ? and estrelas < ?) \
+            and (diaria > ? and diaria < ?) \
+            and cidade = ? LIMIT ? OFFSET ?"
+            tupla = tupla([parametros[chave] for chave in parametros])
+            resultado = cursor.execute(consulta, tupla)
 
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 
