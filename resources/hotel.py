@@ -47,6 +47,7 @@ class Hoteis(Resource):
             WHERE (estrelas > ? and estrelas < ?) \
             and (diaria > ? and diaria < ?) \
             LIMIT ? OFFSET ?"
+            resultado = cursor.execute(consulta)
 
         return {'hoteis': [hotel.json() for hotel in HotelModel.query.all()]}
 
