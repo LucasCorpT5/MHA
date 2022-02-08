@@ -48,7 +48,7 @@ class Hoteis(Resource):
             and (diaria > ? and diaria < ?) \
             LIMIT ? OFFSET ?"
             tupla = tuple([parametros[chave] for chave in parametros])
-            resultado = cursor.execute(consulta, ())
+            resultado = cursor.execute(consulta, tupla)
         else:
             consulta = "SELECT * FROM hoteis \
             WHERE (estrelas > ? and estrelas < ?) \
