@@ -63,7 +63,7 @@ class Hoteis(Resource):
                 'hotel_id': linha[0],
                 'nome': linha[1],
                 'estrelas': linha[2],
-                'diaria': linha[3,
+                'diaria': linha[3],
                 'cidade': linha[4]
             })
 
